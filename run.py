@@ -48,14 +48,14 @@ def create_account(first_name, last_name, user_name, password):
     Function to create a random password for the users
     """
         new_password=Credentials.random_password()
-        return random_password
+        return new_password
 
         def main():
             print(" ")
             print("WELCOME TO YOUR PASSWORD VAULT!!!")
-            print("-"*100)
+            print("*"*10 + "*"*10))
         while True:
-            print(" ")
+            print("-"*100)
             print("Use the shortcodes below to navigate:\n 1. SU- Sign Up\n 2. LI- Log in to your\n 3. EX- Exit ")
         short_code=input("Short code:").lower()
         if short_code == "ex":
