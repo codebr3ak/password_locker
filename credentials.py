@@ -1,24 +1,16 @@
 from user import User
 from random import choice
+import string
 
 
 class Credentials:
     """
     Class to create and store user credentials
     """
-    user_credential = [
+    user_credentials = []
     account_credentials = []
-    ]
 
-    class Credentials:
     def __init__(self, website, user_name, account_name, password):
-    """
-    Class to store user credentials
-    Class to create and store user credentials
-    """
-    pass
-
-    def __init__(self, website, username, account_name, password):
         """
         Method to create instances of class Credentials
         """
@@ -31,9 +23,9 @@ class Credentials:
         """
         Function that saves new credentials instances
         """
-        Credentials.user_credential.append(self)
+        Credentials.user_credentials.append(self)
 
-     def random_password():
+    def random_password():
         """
         Function that generates an eight-character alphanumeric password
         """
@@ -52,14 +44,14 @@ class Credentials:
             return present_user
 
     @classmethod
-    def display_credentials(cls,user_name):
-         """
+    def display_credentials(cls, user_name):
+        """
         Method to display saved account credentials
         """
-        for credentials in cls.account_credentials:
+        account_credentials = []
+        for credentials in cls.user_credentials:
             if credentials.user_name == user_name:
                 account_credentials.append(credentials)
-
         return account_credentials
 
     @classmethod
@@ -67,6 +59,8 @@ class Credentials:
         """
         Method to delete user credentials
         """
-        for credentials in cls.account_credentials:
+        account_credentials = []
+        for credentials in cls.user_credentials:
             if credentials.user_name == user_name:
-                account_credentials.remove(credentials)
+                account_credentials.pop(credentials)
+        return account_credentials
