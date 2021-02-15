@@ -1,24 +1,21 @@
- """
-    Class to create new user accounts
+from user import User
+from credentials import Credentials
+
+
+def create_account(first_name, last_name, password):
     """
-    users = []
+    Fuction that creates a new user account when a user opts to sign-up
+    """
+    new_user = User(first_name, last_name, password)
+    return new_user)
 
-    def __init__(self, first, last):
-    def __init__(self, first_name, last_name):
-        """
-        Method to create instances of class User
-        """
-        self.first = first
-        self.last = last
-        self.username = '@' + first
-        self.email = first + '.' + last + '@gmail.com'
-        self.first = first_name
-        self.last = last_name
-        self.username = '@' + first_name
-        self.email = first_name + '.' + last_name + '@gmail.com'
+        print("WELCOME TO YOUR PASSWORD VAULT!!!")
+        print("-"*100)
+        while True:
+        print(" ")
+        print("Use the shortcodes below to navigate:\n 1. SU- Sign Up\n 2. LI- Log in to your\n 3. EX- Exit ")
+        short_code=input("Short code:").lower()
+        if short_code == "ex":
+            break
 
-    def save_user(self):
-        """
-        Function that saves new user instances
-        """
-        User.users.append(self)
+            elif short_code == "su":
