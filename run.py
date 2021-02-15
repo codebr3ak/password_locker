@@ -91,3 +91,62 @@ def create_account(first_name, last_name, user_name, password):
                 short_code=input("Enter short code:")
                 print(" ")
                 print("-"*10)
+                while True:
+                    print("")
+                    print("-"*100)
+                    print("Use these short codes: \n 1. cc- Create new credentials \n 2. dc- Displaying saved credentials \n 3. dd- Delete credentials \n 4. ex- Exit ")
+                    short_code=input("Enter short code:")
+                    print(" ")
+                    print("-"*10)
+                    if short_code == "cc":
+                        print(" ")
+                        print("Enter account credentials:")
+                        website=input("Website Name....")
+                        account_name=input("User Account Name...")
+                        print(
+    "Do you have an existing password? You can alternatively generate a new password below.")
+        while True:
+            print(" ")
+            print("Choose password option as below \n a- Enter existing password b- generate new password")
+            password_code=input("Password option:").lower()
+        if password_code="a":
+            print(" ")
+            print("Enter you password:")
+        break
+        elif password_code="b":
+            print(" ")
+            password=create_password()
+            break
+        elif password_code="c":
+            break
+        elif short_code == "dc":
+             print(" ")
+        if display_credentials(user_name):
+             print("Your account credentials are as below:")
+             print("-"*10)
+        for credentials in display_credentials(user_name):
+            print(f"Website: {website}, Account Name: {account_name}, Password {password}")
+            print("-"*10)
+        else:
+            print(" ")
+            print("No credentials saved yet:")
+            print("-"*10)
+        elif short_code == "dd":
+             print(" ")
+        if delete_credentials(user_name):
+            print("Delete credential:")
+            print("-"*10)
+        for credentials in cls.account_credentials:
+            delete_credentials()
+            print("-"*10)
+        else:
+            print(" ")
+            print("No credentials saved yet:")
+            print("-"*10)
+        elif short_code == "ex":
+            print(" ")
+            print(f"Thank you {user_name} ,Bye!")
+        else:
+            print(" ")
+            print("Sorry that account does not exist, please try again!")
+            print("-"*10)
